@@ -1,5 +1,5 @@
-import { ContactFormData } from "../types/ContactFormData";
-import { API_ALIASES } from "../constants/apiAliases";
+import { ContactFormData } from '../types/ContactFormData';
+import { API_ALIASES } from '../constants/apiAliases';
 
 export class ContactFormPage {
   private readonly nameInput = '[data-testid="ContactName"]';
@@ -9,7 +9,7 @@ export class ContactFormPage {
   private readonly descriptionInput = '[data-testid="ContactDescription"]';
 
   openHomePage(): this {
-    cy.visit("/");
+    cy.visit('/');
     return this;
   }
 
@@ -23,12 +23,12 @@ export class ContactFormPage {
   }
 
   submitContactForm(): this {
-    cy.contains("button", "Submit").click();
+    cy.contains('button', 'Submit').click();
     return this;
   }
 
   verifySuccessMessageIsDisplayed(): this {
-    cy.contains("Thanks for getting in touch").should("be.visible");
+    cy.contains('Thanks for getting in touch').should('be.visible');
     return this;
   }
 

@@ -5,7 +5,18 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:headed": "cypress run --headed --no-exit"
+    "cy:run:headed": "cypress run --headed --no-exit",
+    "lint": "eslint 'cypress/**/*.ts'",
+    "lint:fix": "eslint 'cypress/**/*.ts' --fix",
+    "format": "prettier --write 'cypress/**/*.ts'",
+    "format:check": "prettier --check 'cypress/**/*.ts'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "cypress/**/*.ts": [
+      "eslint",
+      "prettier --check"
+    ]
   },
   "keywords": [],
   "author": "Konrad Mamla",
@@ -17,6 +28,8 @@
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-cypress": "^6.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
     "prettier": "^3.8.2",
     "typescript": "5.4"
   }
