@@ -1,6 +1,6 @@
-import { ContactFormPage } from '../pages/ContactFormPage';
-import { API_ALIASES } from '../constants/apiAliases';
-import formData from '../fixtures/contactForm.json';
+import { ContactFormPage } from '../../src/pages/ContactFormPage';
+import { API_ALIASES } from '../../src/constants/apiAliases';
+import formData from '../../../fixtures/contactForm.json';
 
 describe('Contact Form', () => {
   const contactPage = new ContactFormPage();
