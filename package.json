@@ -1,16 +1,23 @@
 {
   "name": "cypress-contact-form",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "E2E tests for contact form – QA Automation Engineer recruitment task",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:headed": "cypress run --headed --no-exit"
   },
   "keywords": [],
-  "author": "",
+  "author": "Konrad Mamla",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.13.1",
-    "typescript": "^6.0.2"
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
+    "cypress": "^13.17.0",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^6.3.0",
+    "prettier": "^3.8.2",
+    "typescript": "5.4"
   }
 }
