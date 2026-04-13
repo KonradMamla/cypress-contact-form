@@ -26,9 +26,26 @@ npm install
 ## Running tests
 
 ```bash
-npm run cy:open        # interactive mode
-npm run cy:run         # headless
-npm run cy:run:headed  # headed, browser stays open
+npm run cy:open             # interactive mode
+npm run cy:run              # headless
+npm run cy:run:headed       # headed, browser stays open
+npm run cy:run:smoke        # run smoke tests only
+npm run cy:run:regression   # run regression tests only
+```
+
+## Project structure
+
+```
+cypress/
+├── e2e/
+│   ├── src/
+│   │   ├── constants/       # API alias constants
+│   │   ├── pages/           # Page Object Model
+│   │   └── types/           # TypeScript interfaces
+│   └── test_suits/
+│       └── contact/         # Contact form test suite
+├── fixtures/                # Test data
+└── support/                 # Cypress support files
 ```
 
 ## What is tested
@@ -37,6 +54,13 @@ Contact form happy path — form submission with UI and API assertion.
 
 - UI: success message visible after submission
 - API: `POST /api/message` payload matches submitted form data
+
+## Test tags
+
+| Tag | Description |
+|---|---|
+| `@smoke` | Critical path tests |
+| `@regression` | Full regression suite |
 
 ## Defect detected
 
