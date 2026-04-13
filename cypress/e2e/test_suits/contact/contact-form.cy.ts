@@ -10,7 +10,7 @@ describe('Contact Form', () => {
     contactPage.openHomePage();
   });
 
-  it('should display success message and verify API response', () => {
+  it('should display success message and verify API response', { tags: '@smoke' }, () => {
     contactPage.fillContactForm(formData);
     contactPage.submitContactForm();
     contactPage.verifySuccessMessageIsDisplayed();

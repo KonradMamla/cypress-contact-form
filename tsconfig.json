@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["ES2017", "DOM"],
-    "types": ["cypress"],
+    "types": ["cypress", "node"],
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["cypress/**/*.ts", "cypress.config.ts"]
+  "include": ["cypress/**/*.ts", "cypress/**/*.d.ts", "cypress.config.ts"]
 }
