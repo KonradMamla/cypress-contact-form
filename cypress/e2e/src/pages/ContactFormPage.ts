@@ -2,11 +2,21 @@ import { ContactFormData } from '../types/ContactFormData';
 import { API_ALIASES } from '../constants/apiAliases';
 
 export class ContactFormPage {
-  private readonly nameInput = '[data-testid="ContactName"]';
-  private readonly emailInput = '[data-testid="ContactEmail"]';
-  private readonly phoneInput = '[data-testid="ContactPhone"]';
-  private readonly subjectInput = '[data-testid="ContactSubject"]';
-  private readonly descriptionInput = '[data-testid="ContactDescription"]';
+  private NAME_INPUT() {
+    return cy.get('[data-testid="ContactName"]');
+  }
+  private EMAIL_INPUT() {
+    return cy.get('[data-testid="ContactEmail"]');
+  }
+  private PHONE_INPUT() {
+    return cy.get('[data-testid="ContactPhone"]');
+  }
+  private SUBJECT_INPUT() {
+    return cy.get('[data-testid="ContactSubject"]');
+  }
+  private DESCRIPTION_INPUT() {
+    return cy.get('[data-testid="ContactDescription"]');
+  }
 
   openHomePage(): this {
     cy.visit('/');
@@ -14,11 +24,11 @@ export class ContactFormPage {
   }
 
   fillContactForm(data: ContactFormData): this {
-    cy.get(this.nameInput).scrollIntoView().clear().type(data.name);
-    cy.get(this.emailInput).clear().type(data.email);
-    cy.get(this.phoneInput).clear().type(data.phone);
-    cy.get(this.subjectInput).clear().type(data.subject);
-    cy.get(this.descriptionInput).clear().type(data.description);
+    this.NAME_INPUT().scrollIntoView().clear().type(data.name);
+    this.EMAIL_INPUT().clear().type(data.email);
+    this.PHONE_INPUT().clear().type(data.phone);
+    this.SUBJECT_INPUT().clear().type(data.subject);
+    this.DESCRIPTION_INPUT().clear().type(data.description);
     return this;
   }
 
